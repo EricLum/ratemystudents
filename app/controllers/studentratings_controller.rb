@@ -1,0 +1,2 @@
+class StudentratingsController < ApplicationController
+end

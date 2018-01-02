@@ -1,0 +1,2 @@
+module StudentratingsHelper
+end
