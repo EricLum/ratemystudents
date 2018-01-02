@@ -1,0 +1,19 @@
+<%= form_for @rating do |f| %>
+<%= f.label :discipline %>
+<%= f.number_field :discipline %>
+
+<%= f.label :learning_style %>
+<%= f.text_field :learning_style %>
+
+<%= f.label :grit %>
+<%= f.number_field :grit %>
+
+<%= f.label :gpa %>
+<%= f.number_field :gpa, class: :text_field, step: 0.1 %>
+
+<%= f.label :subject %>
+<%= f.text_field :subject %>
+
+<%= f.submit %>
+
+<% end %>
