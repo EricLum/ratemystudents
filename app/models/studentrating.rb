@@ -1,2 +1,0 @@
-class Studentrating < ApplicationRecord
-end
