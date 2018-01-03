@@ -1,1 +1,8 @@
-<h1><%= @student.name %></h1>
+<h1>Ratings for <%= @student.name%></h1>
+<% @student.ratings.each do |r| %>
+  <li>Discipline: <%= r.discipline %></li>
+  <li>Learning Style: <%= r.learning_style %></li>
+  <li>Grit: <%= r.grit %></li>
+  <li>GPA: <%= r.gpa %></li>
+  <li>subject: <%= r.subject %></li>
+<% end %>

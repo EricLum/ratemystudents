@@ -42,6 +42,10 @@ class StudentsController < ApplicationController
     redirect_to students_path
   end
 
+  def analytics
+    @students = Student.all
+  end
+
 
   private
 
