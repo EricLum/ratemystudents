@@ -1,1 +1,12 @@
-<h3>Teacher: <%= @comment.teacher.username %> | Student: <%= @comment.student.name %> | Comment: <%= @comment.content %></h3>
+<h2>Comment for: <%= @comment.student.name %> | From : <%= @comment.teacher.username %></h2><br>
+
+<h4>Comment: <%= @comment.content %></h4><br>
+
+
+<%= link_to new_comment_path, class: 'btn btn-success' do %>
+  <i class="glyphicon glyphicon-plus"></i> Add Another Comment
+<% end %>
+
+<%= link_to new_rating_path, class: 'btn btn-success' do %>
+  <i class="glyphicon glyphicon-plus"></i> Create Rating
+<% end %>

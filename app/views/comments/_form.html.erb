@@ -15,6 +15,7 @@
 <%= f.hidden_field :teacher_id, :value => @teacher.id %>
 <%= f.collection_select :student_id, @students, :id, :name %>
 
+
 <%= f.submit %>
 
 <% end %>

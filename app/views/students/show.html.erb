@@ -5,4 +5,9 @@
   <li>Grit: <%= r.grit %></li>
   <li>GPA: <%= r.gpa %></li>
   <li>subject: <%= r.subject %></li>
+
+  <%= link_to new_comment_path, class: 'btn btn-success' do %>
+    <i class="glyphicon glyphicon-plus"></i> Create a Comment
+  <% end %>
+
 <% end %>
