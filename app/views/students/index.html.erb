@@ -1,5 +1,5 @@
 <ul>
-  <% @students.all.each do |student| %>
-   <li><%= student.name %> </li>
+  <% @students.each do |student| %>
+   <li><%= link_to student.name, student %> </li>
   <% end %>
 </ul>

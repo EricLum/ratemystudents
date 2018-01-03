@@ -1,6 +1,13 @@
+<% if flash[:error] %>
+<label>You were unable to be logged in because: </label>
+  <% flash[:error].each do |err|%>
+    <li><%= err %></li>
+  <% end %>
+<% end %>
+
 <%= form_tag sessions_path do %>
-  <%= text_field_tag :name, nil, placeholder: "Username" %>
-  <%= text_field_tag :password, nil, placeholder: "Password" %>
+  <%= text_field_tag :username, nil, placeholder: "Username" %>
+  <%= password_field_tag :password, nil, placeholder: "Password" %>
   <%= submit_tag "Sign In" %>
 
 <% end %>

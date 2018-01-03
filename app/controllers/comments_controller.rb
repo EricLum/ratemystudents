@@ -5,7 +5,8 @@ class CommentsController < ApplicationController
 
   def new
    @comment = Comment.new
-   @teachers = Teacher.all
+   #@teachers = Teacher.all
+   @teacher = current_teacher
    @students = Student.all
   end
 
@@ -26,6 +27,8 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+    @teachers = Teacher.all
+    @students = Student.all
   end
 
   def update

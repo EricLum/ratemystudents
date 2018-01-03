@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :ratings
   resources :students
   resources :teachers
+  root to: 'teachers#index'
   get "/signup", to: "teachers#new", as: "signup"
   get "/login", to: "sessions#new"
   get '/signin', to: 'sessions#new'

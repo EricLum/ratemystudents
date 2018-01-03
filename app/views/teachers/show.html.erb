@@ -1,1 +1,21 @@
-<h1><%= @teacher.username %></h1>
+<h2>Welcome, <%= @teacher.username %></h2>
+
+<h3>Your students are:</h3>
+
+<ul>
+  <% @teacher.students.each do |student| %>
+    <li><%= link_to student.name, student %></li>
+  <% end %>
+</ul>
+
+<%= link_to new_comment_path, class: 'btn btn-success' do %>
+  <i class="glyphicon glyphicon-plus"></i> Add Student
+<% end %>
+
+<%= link_to new_student_path, class: 'btn btn-success' do %>
+  <i class="glyphicon glyphicon-plus"></i> Create Student
+<% end %>
+
+<%= link_to new_rating_path, class: 'btn btn-success' do %>
+  <i class="glyphicon glyphicon-plus"></i> Create Rating
+<% end %>

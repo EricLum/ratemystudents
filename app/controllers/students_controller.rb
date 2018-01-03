@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   def index
-    @students = Student.all
+    @students = current_teacher.students
   end
 
   def new
@@ -20,6 +20,26 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+  end
+
+  def edit
+    @student = Student.find(params[:id])
+  end
+
+  def update
+    @student = Student.find(params[:id])
+    if @student.update(student_params)
+      redirect_to student_path(@student)
+    else
+      flash[:error] = @student.errors.full_messages
+      redirect_to edit_student_path(@student)
+    end
+  end
+
+  def destroy
+    @student = Student.find(params[:id])
+    @student.destroy
+    redirect_to students_path
   end
 
 

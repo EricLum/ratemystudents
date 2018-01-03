@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       # YOU ARE WHO YOU SAY YOU ARE
       session[:teacher_id] = @teacher.id
       redirect_to teacher_path(@teacher)
+
     else
       flash[:error] = ["Username and password do not match"]
       redirect_to signin_path

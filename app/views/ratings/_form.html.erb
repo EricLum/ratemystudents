@@ -7,19 +7,19 @@
 <% end %>
 <h3>Rate your Student!</h3><br>
 <%= form_for @rating do |f| %>
-<%= f.label :discipline %>
-<%= f.number_field :discipline %>
+<%= f.label :discipline %><br>
+<%= f.number_field :discipline %><br>
 
-<%= f.label :learning_style, "Learning Style" %>
-<%= f.text_field :learning_style %>
+<%= f.label :learning_style, "Learning Style" %><br>
+<%= f.text_field :learning_style %><br>
 
-<%= f.label :grit %>
-<%= f.number_field :grit %>
+<%= f.label :grit %><br>
+<%= f.number_field :grit %><br>
 
-<%= f.label :gpa, "GPA" %>
-<%= f.number_field :gpa, class: :text_field, step: 0.1 %>
+<%= f.label :gpa, "GPA" %><br>
+<%= f.number_field :gpa, class: :text_field, step: 0.1 %><br>
 
-<%= f.label :subject %>
+<%= f.label :subject %><br>
 <%= f.text_field :subject %><br>
 
 <br><%= f.label :student, "Select a Student" %><br>
@@ -34,4 +34,3 @@
 
 <% end %>
 </div>
- 
