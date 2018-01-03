@@ -14,7 +14,7 @@ class TeachersController < ApplicationController
       flash[:msg] = "Welcome #{current_teacher.username}"
     else
     end
-    @teacher = Teacher.find(params[:id])
+    @teacher = Teacher.find(session[:teacher_id])
   end
 
   def create

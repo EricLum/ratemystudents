@@ -1,2 +1,5 @@
 <h3>Student Ratings</h3>
+<%= @rating.studentsratings.each do |sr| %>
+  sr.student
+<% end %>
 <li><%= @rating.discipline %> | <%= @rating.learning_style %> | <%= @rating.grit %> | <%= @rating.gpa %> | <%= @rating.subject %> </li>

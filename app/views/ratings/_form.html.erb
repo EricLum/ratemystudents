@@ -23,7 +23,7 @@
 <%= f.text_field :subject %><br>
 
 <br><%= f.label :student, "Select a Student" %><br>
-<%= f.collection_check_boxes :student_ids, @students, :id, :name %><br>
+<%= f.collection_select :student_ids, @students, :id, :name %><br>
 
 <br><%= f.label :student, "Or Write your own Student" %>
 <%= f.fields_for :students, @rating.students.build do |student_fields| %><br>

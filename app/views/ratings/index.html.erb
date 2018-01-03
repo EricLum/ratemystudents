@@ -1,5 +1,7 @@
+<label>Ratings</label>
 <ul>
-  <% @ratings.all.each do |rating| %>
-    <li><%= rating.subject %></li>
+  <% @ratings.each do |rating| %>
+    <li>Subject: <%= rating.subject %></li>
+    <li>Student:</li>
   <% end %>
 </ul>
