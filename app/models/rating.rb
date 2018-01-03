@@ -4,4 +4,5 @@ class Rating < ApplicationRecord
   validates :gpa, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 5}
   validates :discipline, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 10}
   validates :grit, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 10}
+  accepts_nested_attributes_for :students
 end

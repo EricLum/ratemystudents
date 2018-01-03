@@ -1,3 +1,5 @@
-<% @teachers.each do |t| %>
-<%= t.username %>
-<% end %>
+<ul>
+  <% @teachers.each do |t| %>
+  <li><%= t.username %></li>
+  <% end %>
+</ul>

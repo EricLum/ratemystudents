@@ -2,6 +2,7 @@ class RatingsController < ApplicationController
 
   def new
     @rating = Rating.new
+    @students = Student.all
   end
 
   def create
@@ -47,6 +48,6 @@ class RatingsController < ApplicationController
   private
 
   def rating_params
-    params.require(:rating).permit(:discipline, :learning_style, :grit, :gpa, :subject)
+    params.require(:rating).permit(:discipline, :learning_style, :grit, :gpa, :subject, student_ids: [], students_attributes: [:name])
   end
 end
