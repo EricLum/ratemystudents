@@ -20,16 +20,4 @@ def lowest_grit
   Rating.minimum(:grit)
 end
 
-def most_popular_learning_style
-  #Rating.all.collect do |
-end
-
-def highest_discipline
-
-end
-
-def lowest_discipline
-
-end
-
 end

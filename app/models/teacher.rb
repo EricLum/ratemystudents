@@ -7,4 +7,9 @@ class Teacher < ApplicationRecord
   def student_count
     "You currently have #{self.students.count} student(s)."
   end
+
+  def comment_count
+    "You have currently commented #{self.comments.count} times."
+  end
+
 end

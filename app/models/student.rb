@@ -59,6 +59,7 @@ class Student < ApplicationRecord
      self.comments.count
    end
 
-
-
+   def ratings_count
+     self.ratings.count
+   end
 end
