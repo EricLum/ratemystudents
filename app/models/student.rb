@@ -35,7 +35,7 @@ class Student < ApplicationRecord
         hash[rating.student.name] = rating.grit
      end
      a=hash.sort_by {|_key, value| value}.first
-     "#{a[0]} with a grit of #{a[1]}!"
+     "#{a[0]} with an effort of #{a[1]}!"
    end
 
    def self.highest_grit_student
@@ -44,12 +44,10 @@ class Student < ApplicationRecord
         hash[rating.student.name] = rating.grit
      end
      a=hash.sort_by {|_key, value| value}.last
-     "#{a[0]} with a grit of #{a[1]}!"
+     "#{a[0]} with an effort of #{a[1]}!"
    end
 
-   def self.student_of_the_day
-     self.all.sample.name
-   end
+
 
    def best_subject
      self.ratings.order(:gpa).last.subject

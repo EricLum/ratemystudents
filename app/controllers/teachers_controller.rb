@@ -15,8 +15,11 @@ class TeachersController < ApplicationController
     else
     end
     @teacher = Teacher.find(session[:teacher_id])
-    @top_student = Student.highest_gpa_student
-    @worst_student = Student.lowest_gpa_student
+    if @teacher.students.count > 0
+    @random_student = current_teacher.student_of_the_day
+    @comment_count = current_teacher.comment_count
+  end
+
   end
 
   def create

@@ -12,4 +12,8 @@ class Teacher < ApplicationRecord
     "You have currently commented #{self.comments.count} times."
   end
 
+  def student_of_the_day
+    self.students.all.sample.name
+  end
+
 end

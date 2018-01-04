@@ -45,6 +45,13 @@ class StudentsController < ApplicationController
 
   def analytics
     @students = Student.all
+    @top_student = Student.highest_gpa_student
+    @worst_student = Student.lowest_gpa_student
+    @averagegpa = Student.average_gpa
+    @avg_discipline = Student.average_discipline
+    @lowest_effort = Student.lowest_grit_student
+    @highest_effort = Student.highest_grit_student
+    @pop_learning_style = Rating.most_popular_learning_style
   end
 
 

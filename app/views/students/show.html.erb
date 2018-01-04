@@ -1,6 +1,10 @@
-<h1><%= @student.name%></h1>
+<h1><%= @student.name%></h1><br>
+
+<h4>Best Subject: <%= @student.best_subject%></h4>
+<h4>Worst Subject: <%= @student.worst_subject%></h4>
+<h4>Commented on: <%= @student.comment_count%> times</h4>
+<h4>Rated: <%= @student.ratings_count%> times</h4>
   <ul>
-    #Method for Student's Best Subject?<br>
     <% @student.ratings.each do |rating| %>
     <h3>Rating</h3>
        <li>Behavior: <%= rating.discipline %></li>
@@ -9,8 +13,9 @@
        <li>Subject: <%= rating.subject%></li>
        <li>Final Grade: <%= rating.gpa %></li>
     <% end %>
-
   </ul>
+
+
 
   <%= link_to new_comment_path, class: 'btn btn-success' do %>
     <i class="glyphicon glyphicon-plus"></i> Create a Comment

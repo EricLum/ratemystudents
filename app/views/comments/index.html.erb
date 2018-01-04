@@ -1,5 +1,5 @@
 ### We can add a search bar so a teacher can search for a student
-<h3>Comments</h3>
+<h3>Total Comments: <%= Comment.comment_count %></h3>
 <ul>
   <% @comments.all.each do |comment| %>
    <li>Teacher: <%= comment.teacher.username %> | Student: <%= link_to comment.student.name, comment.student %> | Comment: <%= link_to comment.content, comment %> </li>

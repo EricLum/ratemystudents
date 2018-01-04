@@ -1,6 +1,6 @@
 <h2>Welcome, <%= @teacher.username %>. <%= @teacher.student_count %></h2>
-
-<h3>Your students are:</h3>
+<h3><%= @comment_count %></h3>
+<h4>Your students are:</h4>
 
 <ul>
   <% @teacher.students.each do |student| %>
@@ -8,8 +8,11 @@
   <% end %>
 </ul>
 
-<h3>Your Top Student: <%= @top_student  %></h3>
-<h3>Your Worst Student: <%= @worst_student %></h3>
+<%if current_teacher.students.count > 0 %>
+<h4>Don't forget to give some extra praise to <%= @random_student %> today. </h4>
+<% end %>
+
+
 <%= link_to new_student_path, class: 'btn btn-success' do %>
   <i class="glyphicon glyphicon-plus"></i> Create New Student
 <% end %>
