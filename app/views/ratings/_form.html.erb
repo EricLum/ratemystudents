@@ -25,12 +25,9 @@
 <br><%= f.label :student, "Select a Student" %><br>
 <%= f.collection_select :student_ids, @students, :id, :name %><br>
 
-<br><%= f.label :student, "Or Write your own Student" %>
-<%= f.fields_for :students, @rating.students.build do |student_fields| %><br>
-    <%= student_fields.text_field :name, placeholder: "Write a Name" %><br>
-  <% end %><br>
+<%= f.label :comment_description, "Write a comment about your kid" %>
+<%= f.text_area :comment_description %><br>
 
 <%= f.submit %>
-
 <% end %>
 </div>
