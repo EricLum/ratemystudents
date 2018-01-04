@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authorized
-  helper_method :logged_in?, :current_teacher
+  helper_method :logged_in?, :current_teacher_name
 
   def current_teacher
     if session[:teacher_id]
@@ -17,6 +17,12 @@ class ApplicationController < ActionController::Base
   def authorized
     if !logged_in?
       redirect_to signin_path
+    end
+  end
+
+  def current_teacher_name
+    if current_teacher
+      current_teacher.username
     end
   end
 

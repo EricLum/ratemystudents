@@ -4,3 +4,7 @@ class Rating < ApplicationRecord
   validates :discipline, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 10}
   validates :grit, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 10}
 end
+
+def self.highest_grade
+  Student.maximum(:gpa).student
+end

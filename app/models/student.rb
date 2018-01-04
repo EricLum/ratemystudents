@@ -3,19 +3,27 @@ class Student < ApplicationRecord
   has_many :teachers, through: :comments, dependent: :destroy
   has_many :ratings, dependent: :destroy
 
-  def highest_grade
-    #highest gpa
+  def lowest_grade
+
   end
 
   def highest_grit
 
   end
 
-  def lowest_grade
+  def lowest_grit
 
   end
 
-  def lowest_grit
+  def most_popular_learning_style
+
+  end
+
+  def highest_discipline
+
+  end
+
+  def lowest_discipline
 
   end
 
