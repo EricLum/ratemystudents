@@ -17,4 +17,11 @@ describe Student do
     student.save
     expect(student.teachers).to include(teacher)
   end
+
+  it 'has many comments' do
+    comment = Comment.create
+    student.comments << comment
+    student.save
+    expect(comment.student).to eq(student)
+  end
 end
