@@ -20,4 +20,8 @@ def lowest_grit
   Rating.minimum(:grit)
 end
 
+def self.most_popular_learning_style
+  Rating.group(:learning_style).count.sort_by{|_key, v| v}.last[0]
+end
+
 end

@@ -16,6 +16,10 @@ class Student < ApplicationRecord
      Rating.average(:gpa)
    end
 
+   def self.average_discipline
+     Rating.average(:discipline)
+   end
+
    def self.lowest_gpa_student
      hash = {}
      Rating.all.map do |rating|
@@ -62,4 +66,5 @@ class Student < ApplicationRecord
    def ratings_count
      self.ratings.count
    end
+
 end
