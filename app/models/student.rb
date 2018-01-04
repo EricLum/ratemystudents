@@ -9,7 +9,7 @@ class Student < ApplicationRecord
           hash[rating.student.name] = rating.gpa
        end
        a=hash.sort_by {|_key, value| value}.last
-       "#{a[0]} with a gpa of #{a[1]}!"
+       "#{a[0]} with a GPA of #{a[1]}!"
    end
 
    def self.average_gpa
@@ -22,7 +22,7 @@ class Student < ApplicationRecord
         hash[rating.student.name] = rating.gpa
      end
      a=hash.sort_by {|_key, value| value}.first
-     "#{a[0]} with a gpa of #{a[1]}!"
+     "#{a[0]} with a GPA of #{a[1]}!"
    end
 
    def self.lowest_grit_student
@@ -42,6 +42,23 @@ class Student < ApplicationRecord
      a=hash.sort_by {|_key, value| value}.last
      "#{a[0]} with a grit of #{a[1]}!"
    end
-   
+
+   def self.student_of_the_day
+     self.all.sample.name
+   end
+
+   def best_subject
+     self.ratings.order(:gpa).last.subject
+   end
+
+   def worst_subject
+     self.ratings.order(:gpa).first.subject
+   end
+
+   def comment_count
+     self.comments.count
+   end
+
+
 
 end
