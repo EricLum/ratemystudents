@@ -9,5 +9,13 @@
 </ul>
 
 <%= link_to new_student_path, class: 'btn btn-success' do %>
-  <i class="glyphicon glyphicon-plus"></i> Create Student
+  <i class="glyphicon glyphicon-plus"></i> Create New Student
+<% end %>
+
+<%= link_to new_comment_path, class: 'btn btn-success' do %>
+  <i class="glyphicon glyphicon-plus"></i> Create Comment for Existing Student
+<% end %>
+
+<%= link_to new_rating_path, class: 'btn btn-success' do %>
+  <i class="glyphicon glyphicon-plus"></i> Create Rating for Existing Student
 <% end %>

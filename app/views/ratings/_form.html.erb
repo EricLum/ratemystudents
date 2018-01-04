@@ -5,28 +5,27 @@
     <li><%= err %></li>
   <% end %>
 <% end %>
-<h3>Rate your Student!</h3><br>
+<h3>Year End Report</h3><br>
 <%= form_for @rating do |f| %>
-<%= f.label :discipline %><br>
-<%= f.number_field :discipline %><br>
+<%= f.label :discipline, "Behavior" %><br>
+<%= f.number_field :discipline, placeholder: " Rate from 1-10" %><br>
 
-<%= f.label :learning_style, "Learning Style" %><br>
-<%= f.text_field :learning_style %><br>
+<%= f.label :learning_style, "Learning Style:" %><br>
+<%= f.text_field :learning_style, placeholder: "Learning Style" %><br>
 
-<%= f.label :grit %><br>
-<%= f.number_field :grit %><br>
+<%= f.label :grit, "Effort" %><br>
+<%= f.number_field :grit, placeholder: "Rate from 1-10" %><br>
 
-<%= f.label :gpa, "GPA" %><br>
-<%= f.number_field :gpa, class: :text_field, step: 0.1 %><br>
+<%= f.label :subject, "Subject" %><br>
+<%= f.text_field :subject, placeholder: "Subject" %><br>
 
-<%= f.label :subject %><br>
-<%= f.text_field :subject %><br>
+<%= f.label :gpa, "Final Grade" %><br>
+<%= f.number_field :gpa, class: :text_field, step: 0.1, placeholder: "Rate from 1-5" %><br>
+
+
 
 <br><%= f.label :student, "Select a Student" %><br>
 <%= f.collection_select :student_ids, @students, :id, :name %><br>
-
-<%= f.label :comment_description, "Write a comment about your kid" %>
-<%= f.text_area :comment_description %><br>
 
 <%= f.submit %>
 <% end %>

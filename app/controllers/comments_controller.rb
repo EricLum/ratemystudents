@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
    @comment = Comment.new(comment_params)
    if @comment.valid?
      @comment.save
-     redirect_to @comment
+     redirect_to new_rating_path
    else
     flash[:error] = @comment.errors.full_messages
     redirect_to new_comment_path
@@ -27,7 +27,8 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
-    @teachers = Teacher.all
+    #@teachers = Teacher.all
+    @teacher = current_teacher
     @students = Student.all
   end
 

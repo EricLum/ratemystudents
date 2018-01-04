@@ -1,13 +1,11 @@
-<h1>Ratings for <%= @student.name%></h1>
-<% @student.ratings.each do |r| %>
-  <li>Discipline: <%= r.discipline %></li>
-  <li>Learning Style: <%= r.learning_style %></li>
-  <li>Grit: <%= r.grit %></li>
-  <li>GPA: <%= r.gpa %></li>
-  <li>subject: <%= r.subject %></li>
+<h1><%= @student.name%></h1>
+  <ul>
+    #Method for Student's Best Subject?
+    
+  </ul>
 
   <%= link_to new_comment_path, class: 'btn btn-success' do %>
     <i class="glyphicon glyphicon-plus"></i> Create a Comment
   <% end %>
 
-<% end %>
+  <%= link_to 'Delete Student', student_path(@student), method: :delete, class: 'btn btn-danger'  %>

@@ -1,9 +1,19 @@
-<h2>Student Ratings</h2><br>
+<h2>Progress Report For:</h2><br>
 
 <h3><%= @student.name %>: </h3><br>
 <h4>
-  Discipline: <%= @rating.discipline %><br>
+  Behavior: <%= @rating.discipline %><br>
     Learning Style: <%= @rating.learning_style %><br>
-     Grit: <%= @rating.grit %><br>
-      GPA: <%= @rating.gpa %><br>
-       Subject: <%= @rating.subject %> </h4>
+     Effort: <%= @rating.grit %><br>
+     Subject: <%= @rating.subject %><br>
+      Final Grade: <%= @rating.gpa %><br>
+        </h4>
+
+        <%= link_to new_student_path, class: 'btn btn-success' do %>
+          <i class="glyphicon glyphicon-plus"></i> Create Another Student
+        <% end %>
+
+        <%= link_to new_comment_path, class: 'btn btn-success' do %>
+          <i class="glyphicon glyphicon-plus"></i> Create Another Comment
+        <% end %>
+<%= link_to 'Delete Rating', rating_path(@rating), method: :delete, class: 'btn btn-danger'  %>

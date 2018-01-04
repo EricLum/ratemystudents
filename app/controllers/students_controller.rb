@@ -11,7 +11,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     if @student.valid?
       @student.save
-      redirect_to student_path(@student)
+      redirect_to new_comment_path
     else
       flash[:error] = @student.errors.full_messages
       redirect_to new_student_path
@@ -20,6 +20,7 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+    @ratings = Rating.all
   end
 
   def edit
