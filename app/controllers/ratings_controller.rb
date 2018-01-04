@@ -10,13 +10,7 @@ class RatingsController < ApplicationController
 
   def create
     @rating = Rating.new(rating_params)
-    #Create comment to create teacher association
-    # @comment = Comment.new
-    # @comment.content = rating_params[:comment_description]
-    # @comment.student = Student.find(rating_params[:student_ids])
-    # @comment.teacher = current_teacher
-    # @comment.save
-
+    #byebug
     if @rating.save
       redirect_to rating_path(@rating)
     else
@@ -27,7 +21,7 @@ class RatingsController < ApplicationController
 
   def show
     @rating = Rating.find(params[:id])
-    @student = Student.find(params[:id])
+    @student = @rating.student
   end
 
 
@@ -55,6 +49,6 @@ class RatingsController < ApplicationController
   private
 
   def rating_params
-    params.require(:rating).permit(:discipline, :learning_style, :grit, :gpa, :subject, student_ids: [], students_attributes: [:name])
+    params.require(:rating).permit(:discipline, :learning_style, :grit, :gpa, :subject, :student_id, :author)
   end
 end

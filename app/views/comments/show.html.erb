@@ -1,4 +1,4 @@
-<h2>Comment for: <%= @comment.student.name %> | From : <%= @comment.teacher.username %></h2><br>
+<h2>Comment for: <%= link_to @comment.student.name, @comment.student %> | From : <%= @comment.teacher.username %></h2><br>
 
 <h4>Comment: <%= @comment.content %></h4><br>
 

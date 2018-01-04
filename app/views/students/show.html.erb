@@ -1,7 +1,15 @@
 <h1><%= @student.name%></h1>
   <ul>
-    #Method for Student's Best Subject?
-    
+    #Method for Student's Best Subject?<br>
+    <% @student.ratings.each do |rating| %>
+    <h3>Rating</h3>
+       <li>Behavior: <%= rating.discipline %></li>
+       <li>Learning Style: <%= rating.learning_style %></li>
+       <li>Effort: <%= rating.grit %></li>
+       <li>Subject: <%= rating.subject%></li>
+       <li>Final Grade: <%= rating.gpa %></li>
+    <% end %>
+
   </ul>
 
   <%= link_to new_comment_path, class: 'btn btn-success' do %>

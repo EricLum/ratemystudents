@@ -6,6 +6,7 @@ class CreateRatings < ActiveRecord::Migration[5.1]
       t.integer :grit
       t.float :gpa
       t.string :subject
+      t.integer :student_id 
 
       t.timestamps
     end

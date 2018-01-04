@@ -22,10 +22,12 @@
 <%= f.label :gpa, "Final Grade" %><br>
 <%= f.number_field :gpa, class: :text_field, step: 0.1, placeholder: "Rate from 1-5" %><br>
 
+<%= f.label :subject, "Author" %><br>
+<%= f.text_field :author, placeholder: "Author", value: current_teacher.username %><br>
 
 
 <br><%= f.label :student, "Select a Student" %><br>
-<%= f.collection_select :student_ids, @students, :id, :name %><br>
+<%= f.collection_select :student_id, @students, :id, :name %><br>
 
 <%= f.submit %>
 <% end %>
