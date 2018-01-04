@@ -15,6 +15,8 @@ class TeachersController < ApplicationController
     else
     end
     @teacher = Teacher.find(session[:teacher_id])
+    @top_student = Student.highest_gpa_student
+    @worst_student = Student.lowest_gpa_student
   end
 
   def create

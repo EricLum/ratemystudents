@@ -8,6 +8,8 @@
   <% end %>
 </ul>
 
+<h3>Your Top Student: <%= @top_student  %></h3>
+<h3>Your Worst Student: <%= @worst_student %></h3>
 <%= link_to new_student_path, class: 'btn btn-success' do %>
   <i class="glyphicon glyphicon-plus"></i> Create New Student
 <% end %>
