@@ -16,7 +16,6 @@ class LikesController < ApplicationController
   private
 
   def like_params
-    byebug
     params.require(:like).permit(:comment_id, :teacher_id)
   end
 end
