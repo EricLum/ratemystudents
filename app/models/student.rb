@@ -68,4 +68,13 @@ class Student < ApplicationRecord
      self.comments.inject(0){|sum,com| sum + com.likes.count}
    end
 
+   def self.student_with_most_likes
+     hash = {}
+     Student.all.map do |student|
+        hash[student.name] = student.like_count
+     end
+     a=hash.sort_by {|_key, value| value}.last
+     "#{a[0]} with #{a[1]} likes!"
+   end
+
 end

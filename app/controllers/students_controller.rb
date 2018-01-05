@@ -52,6 +52,7 @@ class StudentsController < ApplicationController
     @lowest_effort = Student.lowest_grit_student
     @highest_effort = Student.highest_grit_student
     @pop_learning_style = Rating.most_popular_learning_style
+    @most_likes = Student.student_with_most_likes
   end
 
 
