@@ -4,6 +4,7 @@
 <h4>Worst Subject: <%= @student.worst_subject%></h4>
 <h4>Commented on: <%= @student.comment_count%> times</h4>
 <h4>Rated: <%= @student.ratings_count%> times</h4>
+<h4> Number of Likes:<%= @student.like_count%></h4>
   <ul>
     <% @student.ratings.each do |rating| %>
     <h3>Rating</h3>
@@ -16,7 +17,6 @@
 
     <% end %>
   </ul>
-
 
 
   <%= link_to new_comment_path, class: 'btn btn-success' do %>

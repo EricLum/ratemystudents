@@ -47,8 +47,6 @@ class Student < ApplicationRecord
      "#{a[0]} with an effort of #{a[1]}!"
    end
 
-
-
    def best_subject
      self.ratings.order(:gpa).last.subject
    end
@@ -63,6 +61,11 @@ class Student < ApplicationRecord
 
    def ratings_count
      self.ratings.count
+   end
+
+   def like_count
+     #count the number of likes of each comment concerning the student
+     self.comments.inject(0){|sum,com| sum + com.likes.count}
    end
 
 end

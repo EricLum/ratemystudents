@@ -22,4 +22,10 @@
 <%= hidden_field_tag 'like[comment_id]' , params[:id]%>
 <%= submit_tag("Like")%>
 <% end %>
-<p>Comment has <%= @comment.likes.count %> likes.</p>
+<p>Comment has <%= @comment.like_count %> likes.</p>
+<label> People who have liked this</label>
+<ol>
+  <% @comment.liking_teacher_names.each do |name|%>
+  <li><%= name %></li>
+  <% end %>
+</ol>
