@@ -42,7 +42,7 @@ class RatingsController < ApplicationController
   def destroy
     @rating = Rating.find(params[:id])
     @rating.destroy
-    redirect_to ratings_path
+    redirect_to teacher_path(current_teacher)
   end
 
 

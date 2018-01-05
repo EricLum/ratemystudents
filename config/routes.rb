@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  resources :likes
+  resources :likes, only: [:new, :create, :destroy]
   resources :comments
-  resources :studentratings
   resources :ratings
-  resources :students
+  resources :students, only: [:new, :create, :show, :destroy,:analytics, :update, :edit]
   resources :teachers
   root to: 'teachers#show'
   get "/signup", to: "teachers#new", as: "signup"

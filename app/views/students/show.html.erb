@@ -7,7 +7,7 @@
 <h4> Number of Likes:<%= @student.like_count%></h4>
   <ul>
     <% @student.ratings.each do |rating| %>
-    <h3>Rating</h3>
+    <h3><%= link_to 'Rating', rating_path(rating) %></h3>
        <li>Author: <%= rating.author %></li>
        <li>Behavior: <%= rating.discipline %></li>
        <li>Learning Style: <%= rating.learning_style %></li>
