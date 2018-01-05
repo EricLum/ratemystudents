@@ -17,10 +17,18 @@
  @import "bootstrap";
 
  .dropdown {
-   background-color: #ff0066;
-   color: #3399ff;
+   background-color: white;
+   color: rgba(113, 181, 244, 1);
  }
 
 .img-fluid {
-  max-width: 15%;
+  max-width: 20%;
+}
+
+.navbar {
+  background-color: rgba(113, 181, 244, 1);
+}
+
+.navbar-brand {
+  background-color: white;
 }
