@@ -7,11 +7,13 @@
   <ul>
     <% @student.ratings.each do |rating| %>
     <h3>Rating</h3>
+       <li>Author: <%= rating.author %></li>
        <li>Behavior: <%= rating.discipline %></li>
        <li>Learning Style: <%= rating.learning_style %></li>
        <li>Effort: <%= rating.grit %></li>
        <li>Subject: <%= rating.subject%></li>
        <li>Final Grade: <%= rating.gpa %></li>
+
     <% end %>
   </ul>
 
