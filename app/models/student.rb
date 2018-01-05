@@ -13,11 +13,11 @@ class Student < ApplicationRecord
    end
 
    def self.average_gpa
-     Rating.average(:gpa)
+     (Rating.average(:gpa) * 100).round / 100.0
    end
 
    def self.average_discipline
-     Rating.average(:discipline)
+     (Rating.average(:discipline)* 100).round / 100.0
    end
 
    def self.lowest_gpa_student
